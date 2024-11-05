@@ -11,7 +11,7 @@ This work is based on our arXive report, which is going to appear in [Medical Im
 
 Deep neural networks have shown potential in analyzing digitized hand-drawn signals for diagnosing Parkinson's disease. However, the lack of interpretability in most existing methods poses a challenge to building user trust. We propose an explainable diagnosis framework, named *PointExplainer*, for providing personalized predictions suitable for human reasoning. *PointExplainer* assigns importance values to hand-drawn segments, reflecting their relative contribution to the model's decision. We also verify model behavior consistency to address the issue of faithfulness. 
 
-In this repository, we release code for testing *PointExplainer* and provide a simple demo showing the personalized inference.
+In this repository, we release code for training *PointExplainer* and provide a simple demo showing the personalized inference.
 
 ## Installation
 The code requires `python=3.8`, as well as `pytorch=2.2.1` and `torchvision=0.17.1`. Please follow the instructions [here](https://pytorch.org/get-started/locally/) to to install both PyTorch and TorchVision dependencies. Installing both PyTorch and TorchVision with CUDA support is strongly recommended.
@@ -23,7 +23,7 @@ Download the ParkinsonHW dataset [here](https://archive.ics.uci.edu/dataset/395/
 
 ### 2. Diagnosis
 #### 2.1 preprocessing
-Run the following commands in sequence to complete data preprocessing:
+Run the following codes in sequence to complete data preprocessing:
 ```
 #step I: Stratified cross-validation segmentation at the individual level
 python diagnosis/preprocess/kfold_split.py
@@ -46,13 +46,13 @@ tensorboard --logdir=diagnosis/log_dir
 ```
 
 #### 2.3 testing
-After the above training, we can test the model and output some visualizations of the error cases. We also providing pre-trained weights for SST and DST datasets to make it easier to start. You can also run the evaluation code with:
+After the above training, we can test the model and output some visualizations of the metric curves. You can run the evaluation code with:
 ```
 python diagnosis/test.py
 ```
 
 
-### Explanation
+### 3. Explanation
 
 ## Demo
 We provide a simple demo with PyQt5 that illustrates how you can use \textit{PointExplainer} for explaable personalized predictions.
