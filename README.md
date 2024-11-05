@@ -1,10 +1,9 @@
 # PointExplainer
 PointExplainer: Towards Practical Transparent Parkinson's Disease Diagnosis
-
+(created by Xuechao Wang at Ghent University.)
 
 <img src="https://github.com/chaoxuewang/PointExplainer/blob/main/images/fig1.jpg" alt="Image text" width="300">
 
-Created by Xuechao Wang at Ghent University.
 
 ## Introduction
 This work is based on our arXive report, which is going to appear in [Medical Image Anglysis](https://www.sciencedirect.com/journal/medical-image-analysis). We proposed an explainable diagnosis framework combined with a digitized hand-drawn test for Parkinson's disease diagnosis.
