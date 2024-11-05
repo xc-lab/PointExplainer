@@ -25,17 +25,22 @@ Download the ParkinsonHW dataset [here](https://archive.ics.uci.edu/dataset/395/
 #### 2.1 preprocessing
 Run the following commands in sequence to complete data preprocessing:
 ```
-function test() {
-  console.log("notice the blank line before this function?");
-}
+#step I: Stratified cross-validation segmentation at the individual level
+python diagnosis/preprocess/kfold_split.py
+#step II: Data processing (constructing point clouds, data enhancement...)
+python diagnosis/preprocess/data_augmentation.py
+#step III: Sliding window segmentation
+python diagnosis/preprocess/segment_patches.py
+#step IV: Divide the training set and the validation set
+python diagnosis/preprocess/split_train_val.py
 ```
 
-
+#### 2.2 training
 We are providing pre-trained weights for SST and DST datasets to make it easier to start.
 
 You can also run the evaluation code with:
 
-
+#### 2.3 testing
 
 ### Explanation
 
