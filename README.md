@@ -14,7 +14,13 @@ Deep neural networks have shown potential in analyzing digitized hand-drawn sign
 In this repository, we release code for training *PointExplainer* and provide a simple demo showing the personalized inference.
 
 ## Installation
-The code requires `python=3.8`, as well as `pytorch=2.2.1`, `torchvision=0.17.1` and `PyQt5=5.15.10`. Please follow the instructions [here](https://pytorch.org/get-started/locally/) to to install both PyTorch and TorchVision dependencies. Installing both PyTorch and TorchVision with CUDA support is strongly recommended.
+1. Clone this repository.
+2. Install dependencies. The code requires `python=3.8`, as well as `pytorch=2.2.1`, `torchvision=0.17.1` and `PyQt5=5.15.10`. Please follow the instructions [here](https://pytorch.org/get-started/locally/) to to install both PyTorch and TorchVision dependencies. Installing both PyTorch and TorchVision with CUDA support is strongly recommended.
+   ```
+   pip install -r requirements.txt
+   ```
+3. Go to the next step **Getting Started**.
+
 
 
 ## Getting Started
