@@ -10,16 +10,27 @@ Deep neural networks have shown potential in analyzing digitized hand-drawn sign
 
 In this repository, we release code (on public dataset-ParkinsonHW) for traning a PD diagnosis network, as well as for providing intelligible explanations.
 
-## Citation
-If you find our work useful in your research, please consider citing:
+## Installation
 
-##Usage
+
+
+## Step by Step Getting Started
 ### Diagnosis
 
 
 
-###Explanation
+### Explanation
+
+## Demo
+We provide a simple demo with PyQt5 that illustrates how you can use \textit{PointExplainer} for explaable personalized predictions.
 
 
-##License
+## Citation
+If you find our work useful in your research, please consider citing:
+
+## Contributing
+Contributions to this repository are welcome. Examples of things you can contribute:
+
+
+## License
 Our code is released under MIT License (see LICENSE file for details).
