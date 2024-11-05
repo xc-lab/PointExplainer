@@ -19,9 +19,18 @@ The code requires `python=3.8`, as well as `pytorch=2.2.1` and `torchvision=0.17
 
 ## Getting Started
 ### 1. Dataset
-Download the ParkinsonHW dataset [here](https://archive.ics.uci.edu/dataset/395/parkinson+disease+spiral+drawings+using+digitized+graphics+tablet), which includes two different methods for testing hand-drawn Archimedean spiral patterns. Note that the download path should be `./diagnosis/data/taw_data`, and the healthy subject data is placed in the `KT` subfolder, and the Parkinson's patient data is placed in the `PD` subfolder.
+Download the ParkinsonHW dataset [here](https://archive.ics.uci.edu/dataset/395/parkinson+disease+spiral+drawings+using+digitized+graphics+tablet), which includes two different methods for testing hand-drawn Archimedean spiral patterns. Note that the download path should be `./diagnosis/data/raw_data`, and the healthy subject data is placed in the `KT` subfolder, and the Parkinson's patient data is placed in the `PD` subfolder.
 
 ### 2. Diagnosis
+#### 2.1 preprocessing
+Run the following commands in sequence to complete data preprocessing:
+```
+function test() {
+  console.log("notice the blank line before this function?");
+}
+```
+
+
 We are providing pre-trained weights for SST and DST datasets to make it easier to start.
 
 You can also run the evaluation code with:
