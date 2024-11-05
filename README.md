@@ -8,13 +8,13 @@ This work is based on our arXive report, which is going to appear in [Medical Im
 
 Deep neural networks have shown potential in analyzing digitized hand-drawn signals for diagnosing Parkinson's disease. However, the lack of interpretability in most existing methods poses a challenge to building user trust. We propose an explainable diagnosis framework, named *PointExplainer*, for providing personalized predictions suitable for human reasoning. *PointExplainer* assigns importance values to hand-drawn segments, reflecting their relative contribution to the model's decision. We also verify model behavior consistency to address the issue of faithfulness. 
 
-In this repository, we release code for traning *PointExplainer*, as well as provide a simple demo showing the personalized reasoning process.
+In this repository, we release code for traning *PointExplainer* and provide a simple demo showing the personalized reasoning process.
 
 ## Installation
+The code requires `python>=3.8`, as well as pytorch>=1.7 and torchvision>=0.8. Please follow the instructions [here](https://pytorch.org/get-started/locally/) to to install both PyTorch and TorchVision dependencies. Installing both PyTorch and TorchVision with CUDA support is strongly recommended.
 
 
-
-## Step by Step Getting Started
+## Getting Started
 ### Diagnosis
 
 
