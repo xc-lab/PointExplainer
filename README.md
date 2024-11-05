@@ -14,7 +14,7 @@ Deep neural networks have shown potential in analyzing digitized hand-drawn sign
 In this repository, we release code for training *PointExplainer* and provide a simple demo showing the personalized inference.
 
 ## Installation
-The code requires `python=3.8`, as well as `pytorch=2.2.1` and `torchvision=0.17.1`. Please follow the instructions [here](https://pytorch.org/get-started/locally/) to to install both PyTorch and TorchVision dependencies. Installing both PyTorch and TorchVision with CUDA support is strongly recommended.
+The code requires `python=3.8`, as well as `pytorch=2.2.1`, `torchvision=0.17.1` and `PyQt5=5.15.10`. Please follow the instructions [here](https://pytorch.org/get-started/locally/) to to install both PyTorch and TorchVision dependencies. Installing both PyTorch and TorchVision with CUDA support is strongly recommended.
 
 
 ## Getting Started
@@ -56,9 +56,10 @@ python diagnosis/test.py
 
 
 ### 3. Explanation
+We have uploaded the trained weight lists (i.e., explanations).
 
 ## Demo
-We provide a simple demo with PyQt5 that illustrates how you can use \textit{PointExplainer} for explaable personalized predictions.
+We provide a simple demo that illustrates how you can use \textit{PointExplainer} to make explainable personalized predictions.
 
 
 ## Citation
@@ -66,6 +67,9 @@ If you find our work useful in your research, please consider citing:
 
 ## Contributing
 Contributions to this repository are welcome. Examples of things you can contribute:
+- Analyze the weight list results and try to find the commonalities between hand-drawn points with the same attributes.
+- Speed Improvements. Like re-writing some Python code in TensorFlow or Cython.
+
 
 
 ## License
