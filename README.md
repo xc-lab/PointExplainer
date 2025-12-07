@@ -1,8 +1,6 @@
 # PointExplainer
 PointExplainer: Towards Practical Transparent Parkinson's Disease Diagnosis
 
-(created by Xuechao Wang at Ghent University.)
-
 <img src="https://github.com/chaoxuewang/PointExplainer/blob/main/images/fig1.jpg" alt="Image text" width="300">
 
 
