@@ -25,7 +25,6 @@ In this repository, we release code and data for our *PointExplainer* diagnosis 
 ## Installation
 Install the required dependencies. The project requires `python=3.8` and has been tested with `pytorch=2.2.1`, `torchvision=0.17.1`, and `PyQt5=5.15.10`.  Please follow the official instructions [here](https://pytorch.org/get-started/locally/) to install PyTorch and TorchVision. Installing them with CUDA support is strongly recommended.
 ```
-bash
 pip install -r requirements.txt
 ```
 
@@ -49,7 +48,6 @@ data/
 ### 2. Preprocessing
 Run the following scripts in order to complete the preprocessing pipeline:
 ```
-bash
 # Step I: Stratified cross-validation split at the subject level
 python preprocess/kfold_split.py
 
@@ -66,7 +64,6 @@ python preprocess/split_train_val.py
 ### 3. Training
 To train the classification model, run:
 ```
-bash
 python train.py
 ```
 All log files and model checkpoints will be saved automatically to the `log_dir` directory by default. You can use TensorBoard to visualize the model architecture and monitor training progress:
@@ -78,7 +75,6 @@ tensorboard --logdir=log_dir
 ### 4 Testing
 After training, you can evaluate the model and generate visualizations of key performance metrics by running:
 ```
-bash
 python test.py
 ```
 
