@@ -36,10 +36,11 @@ Download the dataset from [here](https://archive.ics.uci.edu/dataset/395/parkins
 The dataset contains two handwriting patterns, SST (Static Spiral Test) and DST (Dynamic Spiral Test), used for acquiring digitized Archimedean spiral drawings.
 After downloading, organize the dataset into the following directory structure:
 ```
-bash
-data/ParkinsonHW/raw_data/
-                        KT/  # healthy cotrol subjects
-                        PD/  # parkinson's deisease patients
+data/
+|- ParkinsonHW/
+   |- raw_data/
+      |- KT/   # healthy control subjects
+      |- PD/   # Parkinson’s disease patients
 ```
 
 <img src="https://github.com/chaoxuewang/PointExplainer/blob/main/images/fig4.jpg" alt="Image text" width="300">
