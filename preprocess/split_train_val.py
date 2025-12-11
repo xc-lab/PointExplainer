@@ -1,9 +1,12 @@
 #  -*- coding: utf-8 -*-
 '''
-This script is responsible for dividing the patches dataset into training and validation sets.
+DATA_PREPROCESSING Step IV:
+
+This script is responsible for dividing the patches dataset into training (80%) and validation (20%) sets.
 
 @author: xuechao.wang@ugent.be
 '''
+
 import os
 import numpy as np
 
