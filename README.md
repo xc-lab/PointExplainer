@@ -16,11 +16,11 @@ If you find our work useful in your research, please consider citing:
 ```
 
 ## Introduction
-We proposed an explainable diagnosis framework combined with a digitized hand-drawn test for Parkinson's disease diagnosis.
+We introduce *PointExplainer*, an interpretable diagnostic framework designed to enhance clinical interpretability and support the early diagnosis of Parkinson’s disease.
 
-PointExplainer assigns attribution scores to local segments of a handwriting trajectory, highlighting their relative contribution to the model’s decision. This explanation format, consistent with expert cognitive patterns, enables clinicians to quickly locate key regions and understand the model’s diagnostic logic. In addition, we design behavior-consistency metrics to quantitatively assess the faithfulness of the explanations, reducing reliance on subjective evaluation.
+*PointExplainer* assigns attribution scores to local segments of a handwriting trajectory, highlighting their relative contribution to the model’s decision. This explanation format, consistent with expert reasoning patterns, enables clinicians to quickly identify key regions and understand the model’s diagnostic logic. In addition, we design consistency metrics to quantitatively assess the faithfulness of the explanations, reducing reliance on subjective evaluation.
 
-In this repository, we release code for training *PointExplainer* and provide a simple demo showing the personalized inference.
+In this repository, we release code and data for our *PointExplainer* diagnosis and explanation networks as well as a few utility scripts for training, testing and data processing and visualization on the SST and DST datasets.
 
 ## Installation
 1. Clone this repository.
