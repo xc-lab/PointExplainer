@@ -46,7 +46,7 @@ data/
 <img src="https://github.com/chaoxuewang/PointExplainer/blob/main/images/fig4.jpg" alt="Image text" width="300">
 
 
-### 2. preprocessing
+### 2. Preprocessing
 Run the following scripts in order to complete the preprocessing pipeline:
 ```
 # Step I: Stratified cross-validation split at the subject level
@@ -62,7 +62,7 @@ python preprocess/segment_patches.py
 python preprocess/split_train_val.py
 ```
 
-#### 2.2 training
+### 3. Training
 Train a model to classify hand-drawn data:
 ```
 python diagnosis/train.py
