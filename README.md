@@ -12,7 +12,7 @@ If you find our work useful in your research, please consider citing:
   author={Wang, Xuechao and Nomm, Sven and Huang, Junqing and Medijainen, Kadri and Toomela, Aaro and Ruzhansky, Michael},
   journal={arXiv preprint arXiv:2505.03833},
   year={2025}
-}
+}```
 
 ## Introduction
 We proposed an explainable diagnosis framework combined with a digitized hand-drawn test for Parkinson's disease diagnosis.
