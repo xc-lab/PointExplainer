@@ -13,7 +13,6 @@ from torch.utils.data import DataLoader
 from torch.utils.tensorboard import SummaryWriter
 
 from models.pointnet import PointNet, PointNet_loss
-from models.pointtransformer import PointTransformerCls, PiT_loss
 from dataset import MyDataset
 
 
@@ -196,8 +195,7 @@ def train(train_loader, val_loader, model, loss_func, optimizer, scheduler, devi
 if __name__ == '__main__':
 
     parser = argparse.ArgumentParser()
-    parser.add_argument('--data_root', type=str, default='data/ParkinsonHW/fold_2/pointcloud/patches',help='Root to the dataset')
-    # DraWritePD
+    parser.add_argument('--data_root', type=str, default='data/ParkinsonHW/fold_1/pointcloud/patches',help='Root to the dataset')
 
     parser.add_argument('--model', type=str, default='PointNet', help='Model name',
                         choices=['SiT', 'PointNet', 'PointNet++'])
@@ -220,7 +218,7 @@ if __name__ == '__main__':
     parser.add_argument('--scheduler', default='CosineAnnealingLR',
                         choices=['CosineAnnealingLR', 'ReduceLROnPlateau', 'MultiStepLR', 'ConstantLR'])
 
-    parser.add_argument('--augment', type=bool, default=True, help='Augment the train data')
+    parser.add_argument('--augment', type=bool, default=False, help='Augment the train data')
 
     parser.add_argument('--log_dir', type=str, default='log_dir', help='Train/val loss and accuracy logs')
 
@@ -229,8 +227,6 @@ if __name__ == '__main__':
     # checkpoint and resume    #2023_10_26_21_27_25
     parser.add_argument('--resume', metavar='PATH', type=str, default='',
                         help='path to latest checkpoint (default: none)')
-
-    # large batch size.当数据太大或者硬件有限时，累计多次之后再进行迭代，可以和更大batchsize性能相当
 
     parser.add_argument('--large-batch-size', metavar='N', type=bool, default=False,
                         help='using large batch size (default: False)')
@@ -262,9 +258,6 @@ if __name__ == '__main__':
     if args.model == 'PointNet':
         model = PointNet(args.num_category, normal_channel=True) # if feature just x y z, the normal_channel is False; if feature is x y z R G B, the normal_channel is True
         cls_loss = PointNet_loss()
-    elif args.model == 'PointNet++':
-        model = PointTransformerCls(npoints=args.npoints)
-        cls_loss = PiT_loss()
     else:
         raise NotImplementedError('Model [{:s}] not recognized.'.format(args.model))
 
@@ -272,7 +265,6 @@ if __name__ == '__main__':
         model = nn.DataParallel(model, device_ids=device_ids)
     model = model.to(device)
     loss = cls_loss.to(device)
-
 
     if args.opt == 'Adam':
         optimizer = torch.optim.Adam(model.parameters(), lr=args.lr, betas=(0.9, 0.999), eps=1e-08, weight_decay=1e-4)
