@@ -63,13 +63,15 @@ python preprocess/split_train_val.py
 ```
 
 ### 3. Training
-Train a model to classify hand-drawn data:
+To train the classification model, run:
 ```
-python diagnosis/train.py
+bash
+python train.py
 ```
-Log files and network parameters will be saved to `diahnosis/log_dir` folder in default. We can use TensorBoard to view the network architecture and monitor the training progress.
+All log files and model checkpoints will be saved automatically to the `log_dir` directory by default. You can use TensorBoard to visualize the model architecture and monitor training progress:
 ```
-tensorboard --logdir=diagnosis/log_dir
+bash
+tensorboard --logdir=log_dir
 ```
 
 #### 2.3 testing
