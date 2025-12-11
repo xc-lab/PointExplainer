@@ -1,5 +1,7 @@
 #  -*- coding: utf-8 -*-
 '''
+Necessary configuration functions
+
 @author: xuechao.wang@ugent.be
 '''
 
@@ -11,18 +13,18 @@ import math
 
 def curvature(x, y):
     '''
-        Computes the curvature of a 2D trajectory based on the coordinates x and y.
+    Computes the curvature of a 2D trajectory based on the coordinates x and y.
 
-        Parameters:
-        x : np.array
-            Array of x-coordinates of the trajectory.
-        y : np.array
-            Array of y-coordinates of the trajectory.
+    Parameters:
+    x : np.array
+        Array of x-coordinates of the trajectory.
+    y : np.array
+        Array of y-coordinates of the trajectory.
 
-        Returns:
-        curvature : np.array
-            Array representing the curvature at each point of the trajectory.
-        '''
+    Returns:
+    curvature : np.array
+        Array representing the curvature at each point of the trajectory.
+    '''
     dx_dt = np.gradient(x)
     dy_dt = np.gradient(y)
     d2x_dt2 = np.gradient(dx_dt)
