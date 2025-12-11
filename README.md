@@ -23,13 +23,11 @@ We introduce *PointExplainer*, an interpretable diagnostic framework designed to
 In this repository, we release code and data for our *PointExplainer* diagnosis and explanation networks as well as a few utility scripts for training, testing and data processing and visualization on the SST and DST datasets.
 
 ## Installation
-1. Clone this repository.
-2. Install dependencies. The code requires `python=3.8`, as well as `pytorch=2.2.1`, `torchvision=0.17.1` and `PyQt5=5.15.10`. Please follow the instructions [here](https://pytorch.org/get-started/locally/) to to install both PyTorch and TorchVision dependencies. Installing both PyTorch and TorchVision with CUDA support is strongly recommended.
-   ```
-   pip install -r requirements.txt
-   ```
-3. Go to the next step **Getting Started**.
-
+Install the required dependencies. The project requires `python=3.8` and has been tested with `pytorch=2.2.1`, `torchvision=0.17.1`, and `PyQt5=5.15.10`.  Please follow the official instructions [here](https://pytorch.org/get-started/locally/) to install PyTorch and TorchVision. Installing them with CUDA support is strongly recommended.
+```
+bash
+pip install -r requirements.txt
+```
 
 
 ## Getting Started
