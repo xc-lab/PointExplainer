@@ -1,5 +1,7 @@
 #  -*- coding: utf-8 -*-
 '''
+DATA_PREPROCESSING StepI:
+
 This script performs a 3-fold stratified K-Fold split at the individual level.
 
 @author: xuechao.wang@ugent.be
@@ -55,9 +57,8 @@ def kfold_split(path, dataset):
 
 if __name__ == '__main__':
     path = '../data'
-
     dataset = 'ParkinsonHW'
 
-    # kfold_split(path, dataset) # be careful if run this line
+    kfold_split(path, dataset) # be careful if run this line
 
 
