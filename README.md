@@ -49,6 +49,7 @@ data/
 ### 2. Preprocessing
 Run the following scripts in order to complete the preprocessing pipeline:
 ```
+bash
 # Step I: Stratified cross-validation split at the subject level
 python preprocess/kfold_split.py
 
