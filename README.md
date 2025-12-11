@@ -30,7 +30,7 @@ pip install -r requirements.txt
 ```
 
 
-## Getting Started
+## Usage
 ### 1. Dataset
 Download the dataset from [here](https://archive.ics.uci.edu/dataset/395/parkinson+disease+spiral+drawings+using+digitized+graphics+tablet).
 The dataset contains two handwriting patterns, SST (Static Spiral Test) and DST (Dynamic Spiral Test), used for acquiring digitized Archimedean spiral drawings.
@@ -75,10 +75,11 @@ bash
 tensorboard --logdir=log_dir
 ```
 
-#### 2.3 testing
-After the above training, we can test the model and output some visualizations of the metric curves. You can run the evaluation code with:
+### 4 Testing
+After training, you can evaluate the model and generate visualizations of key performance metrics by running:
 ```
-python diagnosis/test.py
+bash
+python test.py
 ```
 
 
