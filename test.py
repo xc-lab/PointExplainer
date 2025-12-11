@@ -56,12 +56,12 @@ def result_to_threshold(preds_targets_dict):
         # npv_list.append(metric.npv())
 
     # Prepare file path
-    file_path = os.path.join('./data/K_folds', f'{args.fold}-{args.data_pattern}.txt')
-    if os.path.exists(file_path):
-        os.remove(file_path)
+    file_path = os.path.join('data/vis_results', f'{args.fold}-{args.data_pattern}.txt')
+    # if os.path.exists(file_path):
+    #     os.remove(file_path)
     # Save the new result to the file
     array_result = np.array([acc_list, f1_list, recall_list, specificity_list])
-    np.savetxt(file_path, array_result, delimiter=',', fmt='%.10f')
+    # np.savetxt(file_path, array_result, delimiter=',', fmt='%.10f')
 
     fig = plt.figure(figsize=(10, 8))
     ax = fig.subplots()
@@ -102,7 +102,7 @@ def evaluate_cls(args):
         os.mkdir(args.out_path)
 
     if args.model == 'PointNet':
-        model = PointNet(args.num_category, normal_channel=True) # if feature just x y z, the normal_channel is False; if feature is x y z R G B, the normal_channel is True
+        model = PointNet(args.num_category, normal_channel=False) # if feature just x y z, the normal_channel is False; if feature is x y z R G B, the normal_channel is True
     else:
         raise NotImplementedError('Model [{:s}] not recognized.'.format(args.model))
 
@@ -121,8 +121,8 @@ def evaluate_cls(args):
             temp_data, L = data_reading(json_file_path, args.dataset, args.data_pattern)
             if L > 0:
                 # 0-x,1-y,2-z,3-p,4-g,5-t,6-v,7-acc,8-jerk,9-dx,10-dy,11-dz,12-dp,13-dg,14-dt,15-radius,16-angle,17-curvature
-
-                pc = temp_data[:, [0, 1, 3, 2, 2, 2]]  # important! here control Z channel uses which han-drawn feature
+                pc = temp_data[:, [0, 1, 15]]
+                # pc = temp_data[:, [0, 1, 3, 2, 2, 2]]  # important! here control Z channel uses which han-drawn feature
                 # pc[:, 3:] = 1
 
                 patch_dataset = get_testing_patches(pc, args.window_size, args.stride_size) # segment into patch, do normalization, delate the stroke info
@@ -192,7 +192,7 @@ def evaluate_cls(args):
                     else:
                         preds_sequence_dataset.append(0)
 
-    result_to_threshold(pres_targets_dataset)
+    # result_to_threshold(pres_targets_dataset)
 
     targets_sequence_dataset = np.array(targets_sequence_dataset)
     preds_sequence_dataset = np.array(preds_sequence_dataset)
@@ -215,43 +215,24 @@ def evaluate_cls(args):
         "Sequence: Accuracy(ACC) = {:f}, F1_score = {:f}, Recall(Sensitivity,TPR) = {:f}, and Precision(PPV) = {:f}, and NPV = {:f}, and Specificity(TNR) = {:f}, and Matthews correlation coefficient(MCC) = {:f}. \n".format(acc_score, f1_score, recall_score,
                                                                       precision_score, npv, specificity, mcc))
 
-    targets_patches_dataset = np.array(targets_patches_dataset)
-    preds_patches_dataset = np.array(preds_patches_dataset)
-    all_metric = Performance(targets_patches_dataset, preds_patches_dataset)
-    # all_metric.roc_plot()
-    # all_metric.plot_matrix()
-    all_acc_score = all_metric.accuracy()
-    all_f1_score = all_metric.f1_score()
-    all_recall_score = all_metric.recall()
-    all_precision_score = all_metric.presision()
-    all_specificity = all_metric.specificity()
-    all_npv = all_metric.npv()
-    all_mcc = all_metric.mcc()
-    print(
-        "Patches: Accuracy(ACC) = {:f}, F1_score = {:f}, Recall(Sensitivity,TPR) = {:f}, and Precision(PPV) = {:f}, and NPV = {:f}, and Specificity(TNR) = {:f}, and Matthews correlation coefficient(MCC) = {:f}. \n".format(
-            all_acc_score, all_f1_score, all_recall_score, all_precision_score, all_npv, all_specificity, all_mcc))
-
+   
 
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
+    parser.add_argument('--data_pattern', type=int, default=1, choices=[0, 1]) # 0: Static Spiral Test (SST Dataset) with pressure as height ;  1: Dynamic Spiral Test (DST Dataset) with radius as height
+    parser.add_argument('--window_size', type=int, default=512, help='Sequence patch length')
+    parser.add_argument('--fold', type=str, default='', choices=['fold_1', 'fold_2', 'fold_3'])
+    parser.add_argument('--checkpoint', type=str, default='', help='Root to the best checkpoint')
+
     parser.add_argument('--data_root', type=str, default='data', help='Root to the test dataset')
-
     parser.add_argument('--dataset', type=str, default='ParkinsonHW', help='Dataset name')
-    parser.add_argument('--fold', type=str, default='fold_2', choices=['fold_1', 'fold_2', 'fold_3'])
-
     parser.add_argument('--data_type', type=str, default='pointcloud', choices=['pointcloud'])
-
-    parser.add_argument('--data_pattern', type=int, default=0, choices=[0, 1])
-
-    parser.add_argument('--checkpoint', type=str, default='./log_dir/2025_03_14_08_54_51/checkpoints/best_model/PointNet_cls.pth',
-                        help='Root to the best checkpoint')
 
     parser.add_argument('--num_category', default=2, type=int, choices=[2], help='training on spiral shape dataset')
 
     parser.add_argument('--model', type=str, default='PointNet', help='Model name')
 
-    parser.add_argument('--window_size', type=int, default=256, help='Sequence patch length')
     parser.add_argument('--stride_size', type=int, default=8, help='Degree of overlap of adjacent patches')
 
     parser.add_argument('--out_path', type=str, default='output', help='Root for saving the val results')
