@@ -37,10 +37,10 @@ The dataset contains two handwriting patterns, SST (Static Spiral Test) and DST 
 After downloading, organize the dataset into the following directory structure:
 ```
 data/
-|- ParkinsonHW/
-   |- raw_data/
-      |- KT/   # healthy control subjects
-      |- PD/   # Parkinson’s disease patients
+└── ParkinsonHW/
+    └── raw_data/
+        ├── KT/   # healthy control subjects
+        └── PD/   # Parkinson’s disease patients
 ```
 
 <img src="https://github.com/chaoxuewang/PointExplainer/blob/main/images/fig4.jpg" alt="Image text" width="300">
