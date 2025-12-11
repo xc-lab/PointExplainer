@@ -18,7 +18,7 @@ If you find our work useful in your research, please consider citing:
 ## Introduction
 We proposed an explainable diagnosis framework combined with a digitized hand-drawn test for Parkinson's disease diagnosis.
 
-Deep neural networks have shown potential in analyzing digitized hand-drawn signals for diagnosing Parkinson's disease. However, the lack of interpretability in most existing methods poses a challenge to building user trust. We propose an explainable diagnosis framework, named *PointExplainer*, for providing personalized predictions suitable for human reasoning. *PointExplainer* assigns importance values to hand-drawn segments, reflecting their relative contribution to the model's decision. We also verify model behavior consistency to address the issue of faithfulness. 
+PointExplainer assigns attribution scores to local segments of a handwriting trajectory, highlighting their relative contribution to the model’s decision. This explanation format, consistent with expert cognitive patterns, enables clinicians to quickly locate key regions and understand the model’s diagnostic logic. In addition, we design behavior-consistency metrics to quantitatively assess the faithfulness of the explanations, reducing reliance on subjective evaluation.
 
 In this repository, we release code for training *PointExplainer* and provide a simple demo showing the personalized inference.
 
