@@ -29,7 +29,7 @@ def show_point_cloud(data):
 
 if __name__ == '__main__':
 
-    path = '../data/ParkinsonHW/raw_data/KT/C_0003.txt'
+    path = './data/ParkinsonHW/raw_data/KT/C_0003.txt'
     temp_data, _ = data_reading(path, 'ParkinsonHW', 1)
 
     pc = temp_data[:, [0, 1, 15]]  # Control the number of attributes contained in the point cloud
@@ -38,6 +38,7 @@ if __name__ == '__main__':
     patches_data = get_training_patches(pc, 2048, 128)
     for p, patch_data in enumerate(patches_data):
         show_point_cloud(patch_data)  # Display point cloud fragments
+
 
 
 
