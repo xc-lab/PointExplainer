@@ -32,17 +32,14 @@ pip install -r requirements.txt
 
 ## Getting Started
 ### 1. Dataset
-Download the ParkinsonHW dataset from [here](https://archive.ics.uci.edu/dataset/395/parkinson+disease+spiral+drawings+using+digitized+graphics+tablet).
+Download the dataset from [here](https://archive.ics.uci.edu/dataset/395/parkinson+disease+spiral+drawings+using+digitized+graphics+tablet).
 The dataset contains two handwriting patterns, SST (Static Spiral Test) and DST (Dynamic Spiral Test), used for acquiring digitized Archimedean spiral drawings.
-After downloading, place Organize the dataset into the following structure:
+After downloading, organize the dataset into the following directory structure:
 ```
 bash
-data/
-    ParkinsonHW/
-               raw_data/
+data/ParkinsonHW/raw_data/
                         KT/  # healthy cotrol subjects
                         PD/  # parkinson's deisease patients
-
 ```
 
 <img src="https://github.com/chaoxuewang/PointExplainer/blob/main/images/fig4.jpg" alt="Image text" width="300">
