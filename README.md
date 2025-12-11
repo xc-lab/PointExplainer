@@ -46,17 +46,19 @@ data/
 <img src="https://github.com/chaoxuewang/PointExplainer/blob/main/images/fig4.jpg" alt="Image text" width="300">
 
 
-### 2. Diagnosis
-#### 2.1 preprocessing
-Run the following codes in sequence to complete data preprocessing:
+### 2. preprocessing
+Run the following scripts in order to complete the preprocessing pipeline:
 ```
-#step I: Stratified cross-validation segmentation at the individual level
+# Step I: Stratified cross-validation split at the subject level
 python diagnosis/preprocess/kfold_split.py
-#step II: Data processing (constructing point clouds, data enhancement...)
+
+# Step II: Data processing (point cloud construction, data augmentation, etc.)
 python diagnosis/preprocess/data_augmentation.py
-#step III: Sliding window segmentation
+
+# Step III: Sliding-window segmentation of handwriting trajectories
 python diagnosis/preprocess/segment_patches.py
-#step IV: Divide the training set and the validation set
+
+# Step IV: Split the training and validation sets
 python diagnosis/preprocess/split_train_val.py
 ```
 
