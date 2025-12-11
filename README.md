@@ -68,7 +68,6 @@ python train.py
 ```
 All log files and model checkpoints will be saved automatically to the `log_dir` directory by default. You can use TensorBoard to visualize the model architecture and monitor training progress:
 ```
-bash
 tensorboard --logdir=log_dir
 ```
 
