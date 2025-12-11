@@ -1,5 +1,7 @@
 #  -*- coding: utf-8 -*-
 '''
+DATA_PREPROCESSING Step III:
+
 Data segmentation into patches for classification: KT-00, PD-01.
 
 @author: xuechao.wang@ugent.be
@@ -51,10 +53,11 @@ def get_patches_dataset(path, dataset, fold_d, dimension, window_size, stride_si
             # print(file_path)
 
             temp_data = np.loadtxt(file_path, dtype=np.float32, delimiter=',')
-            # 0-x,1-y,2-z,3-p,4-g,5-t,6-v,7-acc,8-jerk,9-dx,10-dy,11-dz,12-dp,13-dg,14-dt,15-radius,16-angle,17-curvature
-            full_data_array = temp_data[:, [0, 1, 3, 2, 2, 2]]   # important.....-to choose another feature as z.
 
-            # full_data_array[:, 3:] = 1
+            # Important!!!!  Next, we will select the features embedded in each dimension of the point cloud, corresponding to [x, y, z, r, g, b].
+            # 0-x,1-y,2-z,3-p,4-g,5-t,6-v,7-acc,8-jerk,9-dx,10-dy,11-dz,12-dp,13-dg,14-dt,15-radius,16-angle,17-curvature
+            full_data_array = temp_data[:, [0, 1, 3]]   # important.....-to choose another feature as z.
+            # full_data_array[:, 3:] = 1  # Here, keeping it means there are only three attributes [x, y, z]; conversely, commenting it out means there are six attributes.
 
             patches_data = get_training_patches(full_data_array, window_size, stride_size[label])
             if len(patches_data) == 0:
@@ -76,11 +79,10 @@ if __name__ == '__main__':
 
     path = '../data'
     dimension = 'pointcloud' # do not change
-
     dataset = 'ParkinsonHW'  # do not change
 
-    window_size = 256
-    stride_size = {'KT':7, 'PD':24}
+    window_size = 256  # 256 for Static Spiral Test (SST Dataset) ;  512 for Dynamic Spiral Test (DST Dataset)
+    stride_size = {'KT':7, 'PD':24}  # Note that different strides are used for PD and HC categories to maintain a balance in the number of patches. A basic 6000 patches are sufficient for training.
 
     for fold_d in ['fold_1', 'fold_2', 'fold_3']:
         print("******{}******".format(fold_d))
