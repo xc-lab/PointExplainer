@@ -50,16 +50,16 @@ data/
 Run the following scripts in order to complete the preprocessing pipeline:
 ```
 # Step I: Stratified cross-validation split at the subject level
-python diagnosis/preprocess/kfold_split.py
+python preprocess/kfold_split.py
 
-# Step II: Data processing (point cloud construction, data augmentation, etc.)
-python diagnosis/preprocess/data_augmentation.py
+# Step II: Data processing (point cloud construction, etc.)
+python preprocess/data_preprocess.py
 
 # Step III: Sliding-window segmentation of handwriting trajectories
-python diagnosis/preprocess/segment_patches.py
+python preprocess/segment_patches.py
 
 # Step IV: Split the training and validation sets
-python diagnosis/preprocess/split_train_val.py
+python preprocess/split_train_val.py
 ```
 
 #### 2.2 training
