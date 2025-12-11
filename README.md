@@ -2,7 +2,7 @@
 
 <img src="https://github.com/chaoxuewang/PointExplainer/blob/main/images/fig1.jpg" alt="Image text" width="300">
 
-[arXiv](https://arxiv.org/abs/2505.03833)
+[arXiv](https://arxiv.org/abs/2505.03833) [arXiv](https://arxiv.org/abs/2505.03833)
 
 ## Introduction
 We proposed an explainable diagnosis framework combined with a digitized hand-drawn test for Parkinson's disease diagnosis.
