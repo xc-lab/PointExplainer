@@ -1,8 +1,18 @@
-# PointExplainer: Towards Transparent Parkinson's Disease Diagnosis
+## PointExplainer: Towards Transparent Parkinson's Disease Diagnosis
 
 <img src="https://github.com/chaoxuewang/PointExplainer/blob/main/images/fig1.jpg" alt="Image text" width="300">
 
 [arXiv](https://arxiv.org/abs/2505.03833) &nbsp; [demo](https://github.com/xc-lab/PD-Demo)
+
+## Citation
+If you find our work useful in your research, please consider citing:
+```bibtex
+@article{wang2025pointexplainer,
+  title={PointExplainer: Towards Transparent Parkinson's Disease Diagnosis},
+  author={Wang, Xuechao and Nomm, Sven and Huang, Junqing and Medijainen, Kadri and Toomela, Aaro and Ruzhansky, Michael},
+  journal={arXiv preprint arXiv:2505.03833},
+  year={2025}
+}
 
 ## Introduction
 We proposed an explainable diagnosis framework combined with a digitized hand-drawn test for Parkinson's disease diagnosis.
