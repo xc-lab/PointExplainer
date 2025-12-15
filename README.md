@@ -79,14 +79,11 @@ python test.py
 
 
 ### 3. Explanation
-We have uploaded the trained weight lists (i.e., explanations).
+A dedicated interpreter was trained for each subject, and perturbation analysis was performed to verify the reliability of the interpretation results.
+```
+python explanation.py
+```
 
-## Demo
-We provide a simple demo that illustrates how you can use \textit{PointExplainer} to make explainable personalized predictions.
-
-
-## Citation
-If you find our work useful in your research, please consider citing:
 
 ## Contributing
 Contributions to this repository are welcome. Examples of things you can contribute:
