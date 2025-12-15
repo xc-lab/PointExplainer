@@ -16,7 +16,7 @@ If you find our work useful in your research, please consider citing:
 ```
 
 ## Introduction
-We introduce *PointExplainer*, an interpretable diagnostic framework designed to enhance clinical interpretability and support the early diagnosis of Parkinson’s disease.
+This work is going to appear in Information Fusion. We introduce *PointExplainer*, an interpretable diagnostic framework designed to enhance clinical interpretability and support the early diagnosis of Parkinson’s disease.
 
 *PointExplainer* assigns attribution scores to local segments of a handwriting trajectory, highlighting their relative contribution to the model’s decision. This explanation format, consistent with expert reasoning patterns, enables clinicians to quickly identify key regions and understand the model’s diagnostic logic. In addition, we design consistency metrics to quantitatively assess the faithfulness of the explanations, reducing reliance on subjective evaluation.
 
