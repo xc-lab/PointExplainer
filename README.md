@@ -4,6 +4,14 @@
 
 [arXiv](https://arxiv.org/abs/2505.03833) &nbsp; [demo](https://github.com/xc-lab/PD-Demo)
 
+
+## Introduction
+This work is going to appear in Information Fusion. We introduce *PointExplainer*, an interpretable diagnostic framework designed to enhance clinical interpretability and support the early diagnosis of Parkinson’s disease.
+
+*PointExplainer* assigns attribution scores to local segments of a handwriting trajectory, highlighting their relative contribution to the model’s decision. This explanation format, consistent with expert reasoning patterns, enables clinicians to quickly identify key regions and understand the model’s diagnostic logic. In addition, we design consistency metrics to quantitatively assess the faithfulness of the explanations, reducing reliance on subjective evaluation.
+
+In this repository, we release code and data for our *PointExplainer* diagnosis and explanation networks as well as a few utility scripts for training, testing and data processing and visualization on the SST and DST datasets.
+
 ## Citation
 If you find our work useful in your research, please consider citing:
 ```bibtex
@@ -15,13 +23,6 @@ If you find our work useful in your research, please consider citing:
 }
 ```
 
-## Introduction
-This work is going to appear in Information Fusion. We introduce *PointExplainer*, an interpretable diagnostic framework designed to enhance clinical interpretability and support the early diagnosis of Parkinson’s disease.
-
-*PointExplainer* assigns attribution scores to local segments of a handwriting trajectory, highlighting their relative contribution to the model’s decision. This explanation format, consistent with expert reasoning patterns, enables clinicians to quickly identify key regions and understand the model’s diagnostic logic. In addition, we design consistency metrics to quantitatively assess the faithfulness of the explanations, reducing reliance on subjective evaluation.
-
-In this repository, we release code and data for our *PointExplainer* diagnosis and explanation networks as well as a few utility scripts for training, testing and data processing and visualization on the SST and DST datasets.
-
 ## Installation
 Install the required dependencies. The project requires `python=3.8` and has been tested with `pytorch=2.2.1`, `torchvision=0.17.1`, and `PyQt5=5.15.10`.  Please follow the official instructions [here](https://pytorch.org/get-started/locally/) to install PyTorch and TorchVision. Installing them with CUDA support is strongly recommended.
 ```
@@ -30,7 +31,6 @@ pip install -r requirements.txt
 
 
 ## Usage
-### 1. Dataset
 Download the dataset from [here](https://archive.ics.uci.edu/dataset/395/parkinson+disease+spiral+drawings+using+digitized+graphics+tablet).
 The dataset contains two handwriting patterns, SST (Static Spiral Test) and DST (Dynamic Spiral Test), used for acquiring digitized Archimedean spiral drawings.
 After downloading, organize the dataset into the following directory structure:
@@ -45,7 +45,6 @@ data/
 <img src="https://github.com/chaoxuewang/PointExplainer/blob/main/images/fig4.jpg" alt="Image text" width="300">
 
 
-### 2. Preprocessing
 Run the following scripts in order to complete the preprocessing pipeline:
 ```
 # Step I: Stratified cross-validation split at the subject level
@@ -61,7 +60,6 @@ python preprocess/segment_patches.py
 python preprocess/split_train_val.py
 ```
 
-### 3. Training
 To train the classification model, run:
 ```
 python train.py
@@ -71,25 +69,16 @@ All log files and model checkpoints will be saved automatically to the `log_dir`
 tensorboard --logdir=log_dir
 ```
 
-### 4 Testing
 After training, you can evaluate the model and generate visualizations of key performance metrics by running:
 ```
 python test.py
 ```
 
 
-### 3. Explanation
 A dedicated interpreter was trained for each subject, and perturbation analysis was performed to verify the reliability of the interpretation results.
 ```
 python explanation.py
 ```
-
-
-## Contributing
-Contributions to this repository are welcome. Examples of things you can contribute:
-- Analyze the weight list results and try to find the commonalities between hand-drawn points with the same attributes.
-- Speed Improvements. Like re-writing some Python code in TensorFlow or Cython.
-
 
 
 ## License
