@@ -2,7 +2,7 @@
 
 <img src="https://github.com/chaoxuewang/PointExplainer/blob/main/images/fig1.jpg" alt="Image text" width="300">
 
-[arXiv](https://arxiv.org/abs/2505.03833) &nbsp; [demo](https://github.com/xc-lab/PD-Demo)
+[paper](https://www.sciencedirect.com/science/article/pii/S1566253525011261) &nbsp; [demo](https://github.com/xc-lab/PD-Demo)
 
 
 ## Introduction
@@ -15,11 +15,15 @@ In this repository, we release code and data for our *PointExplainer* diagnosis 
 ## Citation
 If you find our work useful in your research, please consider citing:
 ```bibtex
-@article{wang2025pointexplainer,
-  title={PointExplainer: Towards Transparent Parkinson's Disease Diagnosis},
-  author={Wang, Xuechao and Nomm, Sven and Huang, Junqing and Medijainen, Kadri and Toomela, Aaro and Ruzhansky, Michael},
-  journal={arXiv preprint arXiv:2505.03833},
-  year={2025}
+@article{WANG2026104064,
+title = {PointExplainer: Towards transparent Parkinson’s disease diagnosis},
+journal = {Information Fusion},
+volume = {129},
+pages = {104064},
+year = {2026},
+issn = {1566-2535},
+doi = {https://doi.org/10.1016/j.inffus.2025.104064},
+url = {https://www.sciencedirect.com/science/article/pii/S1566253525011261}
 }
 ```
 
