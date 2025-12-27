@@ -10,7 +10,7 @@ This work is going to appear in Information Fusion. We introduce *PointExplainer
 
 *PointExplainer* assigns attribution scores to local segments of a handwriting trajectory, highlighting their relative contribution to the model’s decision. This explanation format, consistent with expert reasoning patterns, enables clinicians to quickly identify key regions and understand the model’s diagnostic logic. In addition, we design consistency metrics to quantitatively assess the faithfulness of the explanations, reducing reliance on subjective evaluation.
 
-In this repository, we release code and data for our *PointExplainer* diagnosis and explanation networks as well as a few utility scripts for training, testing and data processing and visualization on the SST and DST datasets.
+In this repository, we release code for our *PointExplainer* diagnosis and explanation networks as well as a few utility scripts for training, testing and data processing and visualization on the SST and DST datasets.
 
 ## Citation
 If you find our work useful in your research, please consider citing:
