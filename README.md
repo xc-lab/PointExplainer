@@ -79,7 +79,7 @@ python test.py
 ```
 
 
-A dedicated interpreter was trained for each subject, and perturbation analysis was performed to verify the reliability of the interpretation results.
+Finally, we trained a dedicated interpreter for each subject and performed perturbation analysis to verify the reliability of the interpretation results.
 ```
 python explanation.py
 ```
